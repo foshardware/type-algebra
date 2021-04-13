@@ -1,0 +1,80 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           type-algebra
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/type-algebra#readme>
+homepage:       https://github.com/foshardware/type-algebra#readme
+bug-reports:    https://github.com/foshardware/type-algebra/issues
+author:         Andreas Westerwick
+maintainer:     westerwick@pconas.de
+copyright:      2021 Andreas Westerwick
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/foshardware/type-algebra
+
+library
+  exposed-modules:
+      Type.Algebra.Arithmetic
+      Type.Algebra.Goedel
+      Type.Algebra.Haskell
+      Type.Algebra.Natural
+      Type.Algebra.Normalize
+      Type.Algebra.Quotient
+      Type.Algebra.Satisfy
+  other-modules:
+      Paths_type_algebra
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base >=4.7 && <5
+    , bifunctors
+    , cond
+    , free
+    , hashable
+    , lens
+    , mtl
+    , newtype
+    , profunctors
+    , tasty
+    , tasty-hunit
+    , template-haskell
+    , th-abstraction
+  default-language: Haskell2010
+
+test-suite type-algebra-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Spec.Type.Algebra.Goedel
+      Paths_type_algebra
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts
+  build-depends:
+      base >=4.7 && <5
+    , bifunctors
+    , cond
+    , free
+    , hashable
+    , lens
+    , mtl
+    , newtype
+    , profunctors
+    , tasty
+    , tasty-hunit
+    , template-haskell
+    , th-abstraction
+    , type-algebra
+  default-language: Haskell2010

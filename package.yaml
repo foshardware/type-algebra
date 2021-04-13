@@ -1,0 +1,43 @@
+name:                type-algebra
+version:             0.1.0.0
+github:              "foshardware/type-algebra"
+license:             BSD3
+author:              "Andreas Westerwick"
+maintainer:          "westerwick@pconas.de"
+copyright:           "2021 Andreas Westerwick"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+description:         Please see the README on GitHub at <https://github.com/githubuser/type-algebra#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- bifunctors
+- cond
+- free
+- hashable
+- profunctors
+- mtl
+- lens
+- newtype
+- tasty
+- tasty-hunit
+- template-haskell
+- th-abstraction
+
+library:
+  source-dirs: src
+  ghc-options:
+  - -Wall
+
+tests:
+  type-algebra-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    dependencies:
+    - type-algebra
